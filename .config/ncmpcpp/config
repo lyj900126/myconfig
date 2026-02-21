@@ -1,0 +1,91 @@
+# @author nate zhou
+# @since 2023,2024
+#ncmpcpp配置文件所在的目录,歌词所在的目录
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/ncmpcpp/.lyrics
+
+#mpd服务端的IP地址,端口,连接超时时间,音乐库目录,音频交叉淡入淡出的时间长度
+mpd_host = localhost
+mpd_port = 6600
+mpd_connection_timeout = 5
+mpd_music_dir = /mnt/E/music/
+mpd_crossfade_time = 5
+
+#启动时显示的屏幕-播放列表(1)
+startup_screen = playlist
+startup_slave_screen = ""
+startup_slave_screen_focus = yes
+
+#锁定屏幕时显示的宽度比例,屏幕锁定状态下的显示区域宽度比例
+locked_screen_width_part = 60
+ask_for_locked_screen_width_part = no
+
+#在启动时跳转到当前播放的歌曲
+jump_to_now_playing_song_at_start = yes
+
+#在执行清除播放列表操作前会弹出确认对话框
+ask_before_clearing_playlists = yes
+
+#在显示时钟时不显示秒数,是否显示音量状态,是否显示音频文件比特率
+clock_display_seconds = no
+display_volume_level = yes
+display_bitrate = yes
+
+#允许通过vim编辑音乐文件的标签信息,是否使用终端内置的编辑器功能
+external_editor = vim                           
+use_console_editor = yes
+
+#保持当前曲目始终处于可视区域中心
+autocenter_mode = yes
+#界面底部状态消息的显示时长
+message_delay_time = "1"
+#自定义播放列表的显示格式(艺术家(Artist)名称;歌曲标题(Title);文件名(Filename);歌曲时长(Length);右对齐标记.)
+song_list_format = "{{%a %t}|{%f}}{$R%l}"  
+
+#current_item_prefix = $b$7                     #自定义当前选中曲目的前缀显示样式:$b表示加粗文本样式;$7指定使用终端调色板第7号颜色（通常为白色）
+#current_item_inactive_column_prefix = $b$(white)$r     #非活动列中当前选中项的前缀样式:加粗效果;白色文本;重置文本属性
+
+#当前播放曲目的前缀显示样式:$b启用加粗文本效果;$3使用终端调色板的第3号颜色（通常为绿色）
+now_playing_prefix = "$b$3"                     
+#当前播放曲目的后缀显示样式
+now_playing_suffix = "$b$9"
+
+#main_window_color = white
+
+#歌曲切换时,使用Linux的notify-send工具发送桌面通知,通知标题为"♫ Now Playing",内容通过mpc current获取当前播放曲目信息
+#execute_on_song_change = notify-send "♫ Now Playing" "$(mpc current)"
+
+#启用终端鼠标交互支持
+mouse_support = "yes"                           
+
+
+# 设置播放列表的经典显示模式,启用经典用户界面模式(2选1),是否显示状态栏、音量,
+playlist_display_mode = "classic"
+#user_interface = alternative
+user_interface = classic
+header_visibility = "no"
+
+ # 是否底部显示播放信息,是否隐藏界面顶部标题栏状态
+statusbar_visibility = "yes"
+titles_visibility = "yes"
+
+
+# 音乐可视化配置:
+visualizer_output_name =                 "Visualizer feed"
+#禁用可视化功能临时测试
+visualizer_in_stereo =                     "no"
+#visualizer_fifo_path =                     "/tmp/mpd.fifo"
+#visualizer_sync_interval =                 "10"
+visualizer_type =                         "spectrum"
+visualizer_look =                         "▋▋"
+
+# lyrics实时同比显示正在播放的歌词;启用在后台获取当前播放歌曲的歌词
+follow_now_playing_lyrics = yes
+fetch_lyrics_for_current_song_in_background = yes
+
+### color ###
+main_window_color = 188
+##005577
+current_item_prefix = $(yellow)$r
+current_item_inactive_column_prefix = $(7)$r
+selected_item_prefix = $4
